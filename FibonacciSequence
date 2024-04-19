@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class FibonacciSequence {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the value of n for Fibonacci sequence: ");
+        int n = scanner.nextInt();
+
+        System.out.println("Fibonacci sequence up to the " + n + "-th term:");
+
+        // Print Fibonacci sequence using recursion
+        for (int i = 0; i < n; i++) {
+            System.out.print(fibonacci(i) + " ");
+        }
+
+        scanner.close();
+    }
+
+    // Recursive function to calculate Fibonacci sequence
+    public static int fibonacci(int n) {
+        if (n <= 1) {
+            return n;
+        }
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+}
